@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>Para Dani ❤️</title>
+
+    <meta name="theme-color" content="#03030a">
+    <meta name="description" content="Un pequeño universo creado para Dani.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main id="app">
+
+        <!-- Canvas donde Three.js dibuja el universo -->
+        <canvas
+            id="universe"
+            aria-label="Universo animado"
+        ></canvas>
+
+        <!-- Oscurecimiento suave de los bordes -->
+        <div class="vignette" aria-hidden="true"></div>
+
+        <!-- Brillo ambiental -->
+        <div class="ambient-glow ambient-glow--blue" aria-hidden="true"></div>
+        <div class="ambient-glow ambient-glow--pink" aria-hidden="true"></div>
+
+        <!-- Pantalla inicial -->
+        <section
+            id="intro"
+            class="intro"
+            aria-labelledby="introTitle"
+        >
+            <div class="intro__content">
+
+                <p class="intro__eyebrow">
+                    Un pequeño universo
+                </p>
+
+                <h1 id="introTitle" class="intro__title">
+                    Para Dani
+                </h1>
+
+                <div class="intro__line" aria-hidden="true"></div>
+
+                <p class="intro__message">
+                    Entre millones de estrellas,
+                    siempre elegiría encontrarte a ti.
+                </p>
+
+                <button
+                    id="startButton"
+                    class="intro__button"
+                    type="button"
+                    disabled
+                >
+                    <span class="intro__button-text">
+                        Entrar al universo
+                    </span>
+
+                    <span
+                        class="intro__button-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+                </button>
+
+                <p class="intro__hint">
+                    Toca la pantalla o mueve suavemente el cursor
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Indicador inicial de carga -->
+        <div
+            id="loader"
+            class="loader"
+            role="status"
+            aria-live="polite"
+        >
+            <div class="loader__star" aria-hidden="true">✦</div>
+
+            <p id="loaderText" class="loader__text">
+                Creando estrellas…
+            </p>
+        </div>
+
+        <!-- Mensaje visible si ocurre un error -->
+        <div
+            id="errorPanel"
+            class="error-panel"
+            role="alert"
+            aria-live="assertive"
+            hidden
+        >
+            <p class="error-panel__title">
+                No se pudo cargar el universo
+            </p>
+
+            <p id="errorMessage" class="error-panel__message">
+                Ocurrió un error inesperado.
+            </p>
+        </div>
+
+        <!-- Aviso de estado para accesibilidad -->
+        <p
+            id="status"
+            class="sr-only"
+            role="status"
+            aria-live="polite"
+        >
+            Preparando el universo.
+        </p>
+
+    </main>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
